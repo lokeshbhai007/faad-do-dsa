@@ -1,4 +1,3 @@
-// components/QuestionForm.jsx
 "use client";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -52,13 +51,12 @@ export default function QuestionForm() {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h2 className="text-xl font-bold mb-4">Analyze New Problem</h2>
+    <div className="bg-gray-900 rounded-lg shadow-md border border-gray-700 p-6">
+      <h2 className="text-xl font-bold mb-4 text-white">Analyze New Problem</h2>
       
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="question" className="block text-sm font-medium text-gray-700 mb-1">
-            Enter a DSA problem
+          <label htmlFor="question" className="block text-sm font-medium text-gray-300 mb-1">
           </label>
           <div className="relative">
             <textarea
@@ -66,21 +64,21 @@ export default function QuestionForm() {
               rows={6}
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
-              className="w-full border border-gray-300 rounded-md p-3 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full bg-gray-800 border border-gray-700 rounded-md p-3 text-gray-200 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Paste your algorithm or data structure question here..."
             />
             {question && (
               <button
                 type="button"
                 onClick={handleClear}
-                className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+                className="absolute top-3 right-3 text-gray-400 hover:text-gray-200"
                 aria-label="Clear input"
               >
                 <X className="h-5 w-5" />
               </button>
             )}
           </div>
-          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+          {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
         </div>
 
         <div className="flex justify-end">
@@ -89,9 +87,9 @@ export default function QuestionForm() {
             disabled={loading || !question.trim()}
             className={`
               flex items-center justify-center px-4 py-2 rounded-md text-white
-              ${loading || !question.trim() 
-                ? 'bg-blue-300 cursor-not-allowed' 
-                : 'bg-blue-600 hover:bg-blue-700'
+              ${loading || !question.trim()
+                ? 'bg-blue-800 opacity-50 cursor-not-allowed'
+                : 'bg-blue-600 hover:bg-blue-500'
               }
               transition-colors duration-200
             `}
@@ -111,7 +109,7 @@ export default function QuestionForm() {
         </div>
       </form>
 
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-sm text-gray-400">
         <p>Example: "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target."</p>
       </div>
     </div>
