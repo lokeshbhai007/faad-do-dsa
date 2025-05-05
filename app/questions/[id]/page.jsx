@@ -40,7 +40,7 @@ export default async function QuestionPage({ params }) {
       <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link href="/analysis" className="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+            <Link href="/all-questions" className="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
               <ArrowLeft className="w-5 h-5 mr-2" />
               <span className="font-medium">Back to Analysis Form</span>
             </Link>
