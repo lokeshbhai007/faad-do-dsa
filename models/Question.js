@@ -1,6 +1,4 @@
-// models/Question.js
-
-
+// models/Question.js 
 import mongoose from 'mongoose';
 
 // Define the schema for the Question model
@@ -17,7 +15,7 @@ const QuestionSchema = new mongoose.Schema({
   difficulty: {
     type: String,
     enum: ['easy', 'medium', 'hard'],
-    default: 'easy'
+    default: 'medium'
   },
   topics: {
     type: [String],
@@ -33,7 +31,7 @@ const QuestionSchema = new mongoose.Schema({
   },
   simplifiedExplanation: {
     type: String,
-    required: true
+    default: ''
   },
   examples: {
     type: [{
@@ -43,13 +41,37 @@ const QuestionSchema = new mongoose.Schema({
     }],
     default: []
   },
+  approaches: {
+    type: [{
+      name: String,
+      timeComplexity: String,
+      spaceComplexity: String,
+      explanation: String,
+      code: String
+    }],
+    default: []
+  },
+  // Change the solutions field to use mongoose.Schema.Types.Mixed
   solutions: {
-    type: [String],
+    type: mongoose.Schema.Types.Mixed,
     default: []
   },
   hint: {
     type: String,
-    required: true
+    default: ''
+  },
+  // Add the similarQuestions field
+  similarQuestions: {
+    type: [{
+      title: String,
+      difficulty: {
+        type: String,
+        enum: ['easy', 'medium', 'hard', ''],
+        default: ''
+      },
+      description: String
+    }],
+    default: []
   },
   createdAt: {
     type: Date,
