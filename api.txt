@@ -1,0 +1,7 @@
+# MongoDB Connection String
+# Replace with your actual MongoDB connection string
+MONGODB_URI=mongodb+srv://lokeshiotcs:qujHvW2DNxDWvvL3@cluster0.jgdp6vo.mongodb.net/faad-do-dsa
+
+# Gemini API Key
+# Get your API key from https://ai.google.dev/
+GEMINI_API_KEY=AIzaSyBneoUvMd4DCZrSsY3G5x0yhYSzFVWr7s0
