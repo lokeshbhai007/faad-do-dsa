@@ -47,6 +47,7 @@ const QuestionSchema = new mongoose.Schema({
       timeComplexity: String,
       spaceComplexity: String,
       explanation: String,
+      properDescribe: String,
       code: String
     }],
     default: []

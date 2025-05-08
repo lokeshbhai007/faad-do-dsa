@@ -43,6 +43,8 @@ export async function POST(request) {
       });
       
       const savedQuestion = await newQuestion.save();
+      // console.log(savedQuestion);
+      
       
       // Return a properly formatted JSON response
       return NextResponse.json({
